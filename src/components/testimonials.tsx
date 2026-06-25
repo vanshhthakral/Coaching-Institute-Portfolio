@@ -68,7 +68,7 @@ export default function Testimonials() {
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-brand-50 glow-blob opacity-30 pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
@@ -76,10 +76,10 @@ export default function Testimonials() {
               Community Voices
             </span>
             <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-brand-900 tracking-tight leading-none">
-              Trusted by Parents & Teachers
+              Testimonals by Parents & Teachers
             </h2>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <button
               onClick={() => setShowForm(!showForm)}
@@ -88,7 +88,7 @@ export default function Testimonials() {
               {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
               {showForm ? "Cancel" : "Write a Review"}
             </button>
-            
+
             {!showForm && (
               <div className="flex gap-2">
                 <button
@@ -112,7 +112,7 @@ export default function Testimonials() {
 
         {/* Carousel / Form Container */}
         <div className="relative min-h-[380px] lg:min-h-[320px] bg-slate-50 border border-gray-200/60 rounded-[32px] p-8 md:p-12 overflow-hidden">
-          
+
           {/* Background Quote Mark */}
           {!showForm && (
             <div className="absolute top-8 right-12 text-brand-100 pointer-events-none opacity-50">
@@ -141,7 +141,7 @@ export default function Testimonials() {
                 ) : (
                   <form onSubmit={handleReviewSubmit} className="space-y-4">
                     <h3 className="font-heading font-bold text-xl text-brand-900 mb-6">Share Your Experience</h3>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <label className="text-xs font-semibold text-gray-500 uppercase">Your Name</label>
@@ -156,7 +156,7 @@ export default function Testimonials() {
                         </select>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-gray-500 uppercase">Rating</label>
                       <div className="flex gap-2">
@@ -235,9 +235,8 @@ export default function Testimonials() {
                 <button
                   key={i}
                   onClick={() => setIndex(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    index === i ? "bg-brand-500 w-6" : "bg-gray-200 hover:bg-gray-300"
-                  }`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${index === i ? "bg-brand-500 w-6" : "bg-gray-200 hover:bg-gray-300"
+                    }`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}

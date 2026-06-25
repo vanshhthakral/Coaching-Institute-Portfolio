@@ -8,10 +8,10 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-150 pt-20 pb-8 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        
+
         {/* Multi-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-4 space-y-6">
             <a
@@ -21,7 +21,7 @@ export default function Footer() {
               Aakshay Jindal<span className="text-brand-500">.</span>
             </a>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-              Focused, premium coaching for school classes, Commerce, CA Foundation, 
+              Focused, premium coaching for school classes, Commerce, CA Foundation,
               and CUET. Dedicated to conceptual learning and personalized student mentor support.
             </p>
             {/* Social Links */}
@@ -78,11 +78,6 @@ export default function Footer() {
               <li>
                 <a href="#features" className="text-gray-500 hover:text-brand-500 transition-colors">
                   Features
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="text-gray-500 hover:text-brand-500 transition-colors">
-                  Pricing
                 </a>
               </li>
               <li>
@@ -162,7 +157,7 @@ export default function Footer() {
 
         {/* Large Wordmark Banner */}
         <div className="w-full text-center py-4 select-none pointer-events-none mb-10 overflow-hidden">
-          <div className="font-heading font-extrabold text-[12vw] leading-none text-gray-100 tracking-tighter uppercase whitespace-nowrap">
+          <div className="font-heading font-extrabold text-[8vw] leading-none text-gray-100 tracking-tighter uppercase whitespace-nowrap">
             Aakshay Jindal
           </div>
         </div>
@@ -174,6 +169,6 @@ export default function Footer() {
         </div>
 
       </div>
-    </footer>
+    </footer >
   );
 }

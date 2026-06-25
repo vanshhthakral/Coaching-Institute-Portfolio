@@ -22,10 +22,10 @@ function Counter({ target, duration = 1.5, suffix = "" }: CounterProps) {
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
-      
+
       // Easing out cubic: progress = 1 - (1 - progress)^3
       const easeProgress = 1 - Math.pow(1 - progress, 3);
-      
+
       setCount(Math.floor(easeProgress * target));
 
       if (progress < 1) {
@@ -43,17 +43,17 @@ function Counter({ target, duration = 1.5, suffix = "" }: CounterProps) {
 
 const statsData = [
   {
-    target: 1000,
+    target: 1519,
     suffix: "+",
     label: "Students guided",
   },
   {
-    target: 8,
+    target: 10,
     suffix: "+",
     label: "Years of teaching",
   },
   {
-    target: 95,
+    target: 97,
     suffix: "%",
     label: "Academic success",
   },

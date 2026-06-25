@@ -15,18 +15,18 @@ const faqs = [
   },
   {
     question: "How do the Saturday Doubt Clinics work?",
-    answer: "Every Saturday, instructors set aside classroom hours specifically for one-on-one sessions. Students can walk in with homework sheets, school test papers, or textbook problems they failed to solve, and work through them with a mentor.",
+    answer: "Every Saturday, instructors set aside classroom hours specifically for one-on-one sessions. Students are also provided with assesments to solve to enhance their knowledge and speed in solving questions",
   },
   {
     question: "Do you support both CBSE and ICSE board students?",
-    answer: "Yes. Our core curriculum is aligned with CBSE standards, but we host dedicated batches for ICSE boards that focus on their specific English literature, history, and science requirements.",
+    answer: "Yes. Our core curriculum is aligned with CBSE standards, but we host dedicated batches for ICSE boards that focus on their specific English literature and history",
   },
   {
     question: "How are parents updated on student progress?",
     answer: "We believe in direct partnerships. Instead of cold, automated performance emails, our mentors call parents directly or schedule brief updates twice a month to discuss class behavior, homework submission, and test progress.",
   },
   {
-    question: "What does the CA Foundation and CUET preparation involve?",
+    question: "What does the CA Foundation CUET and other paths preparation involve?",
     answer: "We follow a dual track: first, we establish high scores in Class XII boards. Second, we integrate entrance-specific multiple-choice question (MCQ) sheets, timed mock test drills on computers, and negative marking strategy clinics.",
   },
   {
@@ -39,14 +39,14 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
-        
+
         {/* Section Head */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 font-heading font-semibold text-xs tracking-wider uppercase mb-4">
             Common Questions
           </span>
           <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-brand-900 tracking-tight leading-none mb-6">
-            Frequently Asked Questions
+            Commonly asked questions
           </h2>
           <p className="text-gray-500 text-base md:text-lg">
             Have questions about admissions, syllabus formats, or academic policies? Find immediate answers here.

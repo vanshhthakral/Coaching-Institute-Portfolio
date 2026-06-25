@@ -56,7 +56,7 @@ export default function Faculty() {
         </div>
 
         {/* Faculty Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {faculties.map((faculty, i) => (
             <motion.a
               href="#contact"
@@ -65,7 +65,7 @@ export default function Faculty() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group block bg-white border border-gray-100 rounded-[28px] overflow-hidden hover:shadow-[0_20px_45px_rgba(20,91,255,0.08)] transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+              className="min-w-[85vw] sm:min-w-0 snap-center group block bg-white border border-gray-100 rounded-[28px] overflow-hidden hover:shadow-[0_20px_45px_rgba(20,91,255,0.08)] transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             >
               {/* Image Container */}
               <div className="relative h-64 w-full bg-gray-100 overflow-hidden">

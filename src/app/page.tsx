@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Loader from "@/components/loader";
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
-import LogoStrip from "@/components/logo-strip";
+
 import Features from "@/components/features";
 import Courses from "@/components/courses";
 import Notices from "@/components/notices";
@@ -54,33 +54,30 @@ export default function Home() {
         {/* 3. Hero Section */}
         <Hero />
 
-        {/* 4. Trusted Organizations Logo Strip */}
-        <LogoStrip />
-
-        {/* 5. Features Grid */}
-        <Features />
-
-        {/* 6. Courses Listings */}
-        <Courses />
-
-        {/* 6.5 Latest Notices */}
-        <Notices />
-
-        {/* 7. Learning Experience & Split Photo Spread */}
-        <LearningExperience />
-
-        {/* 7.5 Faculty Section */}
-        <Faculty />
-
-        {/* 8. Statistics Section */}
+        {/* 4. Statistics Section */}
         <Stats />
 
-        {/* 9. Testimonials Carousel */}
+        {/* 5. Features Grid (Good teaching stays personal / Why choose us) */}
+        <Features />
+
+        {/* 6. Learning Experience (About academy) */}
+        <LearningExperience />
+
+        {/* 7. Courses Listings (Batches) */}
+        <Courses />
+
+        {/* 8. Faculty Section */}
+        <Faculty />
+
+        {/* 9. Latest Notices */}
+        <Notices />
+
+
+
+        {/* 11. Testimonials Carousel */}
         <Testimonials />
 
-
-
-        {/* 11. FAQ Accordions */}
+        {/* 12. FAQ Accordions */}
         <FAQ />
 
         {/* 12. Newsletter Form Card */}

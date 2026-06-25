@@ -28,11 +28,11 @@ export default function LearningExperience() {
     <section id="about" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
+
           {/* Left Column: Photo Spread */}
           <div className="lg:col-span-6 relative flex items-center justify-center min-h-[460px] md:min-h-[580px] w-full">
             <div className="relative w-full h-full max-w-[500px] flex items-center justify-center">
-              
+
               {/* Left Photo */}
               <motion.div
                 initial={{ opacity: 0, x: -50, rotate: 0 }}
@@ -86,7 +86,7 @@ export default function LearningExperience() {
                   unoptimized
                 />
               </motion.div>
-              
+
             </div>
           </div>
 
@@ -94,10 +94,10 @@ export default function LearningExperience() {
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-4">
               <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 font-heading font-semibold text-xs tracking-wider uppercase">
-                About the Academy
+                About academy
               </span>
               <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-brand-900 tracking-tight leading-tight">
-                The expert in anything was once a beginner.
+                Why Choose Us?
               </h2>
               <div className="space-y-4">
                 <p className="text-gray-500 text-base md:text-lg leading-relaxed">
@@ -146,7 +146,7 @@ export default function LearningExperience() {
               </a>
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>

@@ -17,27 +17,19 @@ const notices = [
   },
   {
     id: 3,
-    leftContent: (
-      <div className="flex flex-col gap-1 items-start">
-        <span className="text-brand-400 font-bold tracking-widest uppercase text-[10px]">EVERY</span>
-        <span className="bg-white text-black text-xs font-bold px-2 py-1 rounded">Weekend</span>
-      </div>
-    ),
-    badge: "Aakshay Academy clinic",
+    leftContent: <div className="text-brand-400 font-bold tracking-widest uppercase text-sm">Every WEEKEND</div>,
     title: "Commerce subject clinic",
     description: "Additional doubt support for Accounts and Economics students.",
   },
+
   {
     id: 4,
-    leftContent: (
-      <div className="bg-white text-black text-xs font-bold px-3 py-1 rounded">
-        July
-      </div>
-    ),
-    badge: "Cuet, CA and other career paths for their future",
-    title: "Career guidance session",
+    leftContent: <div className="text-brand-400 font-bold tracking-widest uppercase text-sm"> July</div>,
+    title: "Cuet, CA and other career paths for their future",
     description: "Additional doubt support for all the subjects with test series and regular assessments and analysis of student progress throughout the week.",
   },
+
+
 ];
 
 export default function Notices() {
@@ -47,7 +39,7 @@ export default function Notices() {
         <h2 className="font-heading font-bold text-4xl md:text-5xl tracking-tight mb-12">
           Latest notices
         </h2>
-        
+
         <div className="flex flex-col">
           {notices.map((notice, i) => (
             <motion.div
@@ -56,9 +48,8 @@ export default function Notices() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`flex flex-col sm:flex-row gap-4 sm:gap-12 py-8 ${
-                i !== 0 ? "border-t border-white/10" : ""
-              }`}
+              className={`flex flex-col sm:flex-row gap-4 sm:gap-12 py-8 ${i !== 0 ? "border-t border-white/10" : ""
+                }`}
             >
               {/* Left Column (Date/Time) */}
               <div className="sm:w-28 flex-shrink-0 pt-1">
