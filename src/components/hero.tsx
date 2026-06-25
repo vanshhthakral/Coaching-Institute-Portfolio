@@ -34,7 +34,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Heading and copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -103,7 +103,7 @@ export default function Hero() {
 
           {/* Right Column: Dashboard Mockup & Parallax Floating items */}
           <div className="lg:col-span-5 relative w-full h-[480px] md:h-[550px] flex items-center justify-center">
-            
+
             {/* Dashboard Container */}
             <motion.div
               style={{ x: coords.x * 0.3, y: coords.y * 0.3 }}

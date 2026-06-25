@@ -1,13 +1,23 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 
-const notices = [
+interface Notice {
+  id: number;
+  leftContent: React.ReactNode;
+  title: string;
+  description: string;
+  badge?: string;
+}
+
+const notices: Notice[] = [
   {
     id: 1,
     leftContent: <div className="text-brand-400 font-bold tracking-widest uppercase text-sm">01 JUL</div>,
     title: "Admissions open for 2026-27",
     description: "Enquiries are open across all school and entrance programs.",
+    badge: "New",
   },
   {
     id: 2,
@@ -21,15 +31,12 @@ const notices = [
     title: "Commerce subject clinic",
     description: "Additional doubt support for Accounts and Economics students.",
   },
-
   {
     id: 4,
-    leftContent: <div className="text-brand-400 font-bold tracking-widest uppercase text-sm"> July</div>,
-    title: "Cuet, CA and other career paths for their future",
-    description: "Additional doubt support for all the subjects with test series and regular assessments and analysis of student progress throughout the week.",
+    leftContent: <div className="text-brand-400 font-bold tracking-widest uppercase text-sm">July</div>,
+    title: "CUET, CA and other career paths for their future",
+    description: "Additional doubt support for all subjects with test series, regular assessments and analysis of student progress throughout the week.",
   },
-
-
 ];
 
 export default function Notices() {
