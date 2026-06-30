@@ -25,21 +25,6 @@ export default function Footer() {
 
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 pt-16 pb-0">
 
-        {/* Top CTA Banner */}
-        <div className="mb-14 rounded-2xl bg-gradient-to-r from-brand-500/20 via-brand-600/10 to-indigo-500/10 border border-white/5 backdrop-blur-sm p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-brand-400 text-xs font-bold uppercase tracking-widest mb-2">Ready to excel?</p>
-            <h3 className="font-heading font-extrabold text-2xl md:text-3xl text-white leading-tight">
-              Start your journey with<br className="hidden md:block" /> Aakshay Jindal today.
-            </h3>
-          </div>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white font-bold px-7 py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-brand-500/25 hover:shadow-brand-400/30 hover:-translate-y-0.5 whitespace-nowrap text-sm"
-          >
-            Get in Touch <ArrowUpRight className="w-4 h-4" />
-          </a>
-        </div>
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
@@ -133,8 +118,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wider mb-1">Email</div>
-                  <a href="mailto:jindalaakshay@gmail.com" className="text-gray-300 hover:text-brand-400 transition-colors">
-                    jindalaakshay@gmail.com
+                  <a href="mailto:aakshayacademy@gmail" className="text-gray-300 hover:text-brand-400 transition-colors">
+                    aakshayacademy@gmail.com
                   </a>
                 </div>
               </div>

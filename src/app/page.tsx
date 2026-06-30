@@ -14,7 +14,7 @@ import Courses from "@/components/courses";
 import Notices from "@/components/notices";
 import LearningExperience from "@/components/learning-experience";
 import Faculty from "@/components/faculty";
-import Stats from "@/components/stats";
+
 import Testimonials from "@/components/testimonials";
 
 import FAQ from "@/components/faq";
@@ -55,7 +55,7 @@ export default function Home() {
         <Hero />
 
         {/* 4. Statistics Section */}
-        <Stats />
+
 
         {/* 5. Features Grid (Good teaching stays personal / Why choose us) */}
         <Features />

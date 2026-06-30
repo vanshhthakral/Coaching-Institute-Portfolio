@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  BookOpen, 
-  Users, 
-  LineChart, 
-  MessagesSquare, 
-  Clock, 
-  Compass 
+import {
+  BookOpen,
+  Users,
+  LineChart,
+  MessagesSquare,
+  Clock,
+  Compass
 } from "lucide-react";
 
 const features = [
@@ -67,14 +67,14 @@ export default function Features() {
   return (
     <section id="features" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
-        
+
         {/* Section Heading */}
         <div className="max-w-3xl mb-16">
           <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 font-heading font-semibold text-xs tracking-wider uppercase mb-4">
             Why Choose Aakshay Jindal
           </span>
           <h2 className="font-heading font-extrabold text-4xl md:text-5xl text-brand-900 tracking-tight leading-none mb-6">
-            Good teaching stays personal.
+            The Expert was once a Beginner.
           </h2>
           <p className="text-gray-500 text-lg">
             Aakshay Jindal combines clear explanation, dedicated practice sessions, and continuous academic feedback. Here is how we build student success.

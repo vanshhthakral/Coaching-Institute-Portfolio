@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, ArrowRight, Hand } from "lucide-react";
 import Image from "next/image";
 
 const bullets = [
@@ -23,70 +24,97 @@ const bullets = [
   },
 ];
 
+const photos = [
+  { src: "/images/why-choose-us/photo1.jpeg", alt: "Classroom environment" },
+  { src: "/images/why-choose-us/photo2.jpeg", alt: "Interactive lecture" },
+  { src: "/images/why-choose-us/photo3.jpeg", alt: "Student studying" }
+];
+
 export default function LearningExperience() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleDragEnd = (event: any, info: any) => {
+    // Swipe left
+    if (info.offset.x < -50) {
+      setCurrentIndex((prev) => (prev + 1) % photos.length);
+    }
+    // Swipe right
+    else if (info.offset.x > 50) {
+      setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
+    }
+  };
+
+  const variants = {
+    center: { opacity: 1, x: "0%", y: "0%", rotate: 0, scale: 1, zIndex: 30 },
+    left: { opacity: 0.95, x: "-45%", y: "-5%", rotate: -8, scale: 0.85, zIndex: 10 },
+    right: { opacity: 0.95, x: "45%", y: "5%", rotate: 8, scale: 0.85, zIndex: 10 },
+  };
+
+  const getPosition = (index: number) => {
+    const diff = (index - currentIndex + photos.length) % photos.length;
+    if (diff === 0) return "center";
+    if (diff === 1) return "right";
+    return "left";
+  };
+
   return (
     <section id="about" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-          {/* Left Column: Photo Spread */}
-          <div className="lg:col-span-6 relative flex items-center justify-center min-h-[460px] md:min-h-[580px] w-full">
-            <div className="relative w-full h-full max-w-[500px] flex items-center justify-center">
+          {/* Left Column: 3D Swipeable Collage */}
+          <div className="lg:col-span-6 relative flex flex-col items-center justify-center min-h-[460px] md:min-h-[580px] w-full">
+            <div className="relative w-full aspect-square max-w-[500px] flex items-center justify-center">
+              
+              <AnimatePresence initial={false}>
+                {photos.map((photo, index) => {
+                  const position = getPosition(index);
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={variants}
+                      initial={false}
+                      animate={position}
+                      transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      dragElastic={0.2}
+                      onDragEnd={handleDragEnd}
+                      className="absolute w-[68%] h-[85%] rounded-[32px] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-gray-100 cursor-grab active:cursor-grabbing"
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(max-width: 768px) 85vw, 50vw"
+                        className="object-cover"
+                        unoptimized
+                        draggable={false} // prevent default image drag
+                      />
+                      {/* Swipe Hint Overlay on active card */}
+                      {position === "center" && (
+                        <div className="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+                           <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 text-sm font-bold text-brand-900 shadow-xl pointer-events-none">
+                             <Hand className="w-4 h-4" /> Swipe
+                           </div>
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
 
-              {/* Left Photo */}
-              <motion.div
-                initial={{ opacity: 0, x: -50, rotate: 0 }}
-                whileInView={{ opacity: 0.95, x: -140, y: -20, rotate: -6 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.8, type: "spring", stiffness: 60, damping: 15 }}
-                className="absolute z-10 w-[55%] h-[72%] rounded-3xl overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-gray-150"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=84"
-                  alt="Student organizing study files"
-                  fill
-                  sizes="30vw"
-                  className="object-cover"
-                  unoptimized
+            </div>
+            
+            {/* Mobile Swipe Indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {photos.map((_, i) => (
+                <button 
+                  key={i} 
+                  onClick={() => setCurrentIndex(i)}
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${i === currentIndex ? 'bg-brand-500' : 'bg-gray-200'}`} 
                 />
-              </motion.div>
-
-              {/* Center Photo */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="absolute z-20 w-[68%] h-[85%] rounded-[32px] overflow-hidden border-4 border-white shadow-[0_30px_60px_rgba(6,20,42,0.16)] bg-gray-100"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1500&q=85"
-                  alt="Interactive lecture classroom"
-                  fill
-                  sizes="40vw"
-                  className="object-cover"
-                  unoptimized
-                />
-              </motion.div>
-
-              {/* Right Photo */}
-              <motion.div
-                initial={{ opacity: 0, x: 50, rotate: 0 }}
-                whileInView={{ opacity: 0.95, x: 140, y: 20, rotate: 6 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.8, type: "spring", stiffness: 60, damping: 15 }}
-                className="absolute z-10 w-[55%] h-[72%] rounded-3xl overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] bg-gray-150"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=84"
-                  alt="Student reviewing equations"
-                  fill
-                  sizes="30vw"
-                  className="object-cover"
-                  unoptimized
-                />
-              </motion.div>
-
+              ))}
             </div>
           </div>
 

@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans min-h-screen bg-white text-brand-900 antialiased selection:bg-brand-500 selection:text-white`}
       >
         {children}
